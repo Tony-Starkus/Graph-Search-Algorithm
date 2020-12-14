@@ -32,7 +32,8 @@ class Node:
                 for node in self.__edges_to:
                     result.append([node[0].value, node[1]])
                 return result
-        return self.__edges_to if with_coust and value is False else [node[0].value for node in self.__edges_to]
+            return [node[0].value for node in self.__edges_to]
+        return self.__edges_to if with_coust and value is False else [node[0] for node in self.__edges_to]
 
     @edges_to.setter
     def edges_to(self, list_nodes):
