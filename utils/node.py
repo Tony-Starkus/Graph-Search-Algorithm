@@ -3,7 +3,7 @@ class Node:
 
     def __init__(self, value):
         """
-        :param value: Id or name for the node. Must be unique.
+        :param value: Anything you want. Must be unique.
         """
         self.__value = value
         self.__edges_to = []
