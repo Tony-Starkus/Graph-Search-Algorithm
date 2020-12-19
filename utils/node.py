@@ -1,10 +1,11 @@
 
 class Node:
 
-    def __init__(self, value):
+    def __init__(self, name, value):
         """
         :param value: Anything you want. Must be unique.
         """
+        self.__name = name
         self.__value = value
         self.__edges_to = []
 
@@ -15,6 +16,10 @@ class Node:
     @property
     def coust(self):
         return self.__coust
+
+    @property
+    def name(self):
+        return self.__name
 
     @property
     def edges_to(self):
@@ -33,7 +38,9 @@ class Node:
                     result.append([node[0].value, node[1]])
                 return result
             return [node[0].value for node in self.__edges_to]
-        return self.__edges_to if with_coust and value is False else [node[0] for node in self.__edges_to]
+        if with_coust is False:
+            return [node[0] for node in self.__edges_to]
+        return self.__edges_to if with_coust and value else [node[0] for node in self.__edges_to]
 
     @edges_to.setter
     def edges_to(self, list_nodes):
@@ -54,4 +61,4 @@ class Node:
         return self.__edges_to
 
     def __str__(self):
-        return self.__value
+        return self.__name
