@@ -29,133 +29,36 @@ from utils.node import Node
 from utils.graph import Graph
 
 # Initial State
-n0 = Node("n0", {
-    "l": {
-        "m": 3,
-        "c": 3
-    },
-    "r": {
-        "m": 0,
-        "c": 0
-    }
-})
-
-n1 = Node("n1", {
-    "l": {
-        "m": 3,
-        "c": 2
-    },
-    "r": {
-        "m": 0,
-        "c": 1
-    }
-})
-
-n2 = Node("n2", {
-    "l": {
-        "m": 2,
-        "c": 2
-    },
-    "r": {
-        "m": 1,
-        "c": 1
-    }
-})
-
-n3 = Node("n3", {
-    "l": {
-        "m": 3,
-        "c": 1
-    },
-    "r": {
-        "m": 0,
-        "c": 2
-    }
-})
-
-n4 = Node("n4", {
-    "l": {
-        "m": 3,
-        "c": 0
-    },
-    "r": {
-        "m": 0,
-        "c": 3
-    }
-})
-
-n5 = Node("n5", {
-    "l": {
-        "m": 1,
-        "c": 1
-    },
-    "r": {
-        "m": 2,
-        "c": 2
-    }
-})
-
-n6 = Node("n6", {
-    "l": {
-        "m": 0,
-        "c": 0
-    },
-    "r": {
-        "m": 3,
-        "c": 3
-    }
-})
+n0 = Node("n0", "3c 3m L")
+n1 = Node("n1", "1c 1m R")
+n2 = Node("n2", "2c 0m R")
+n3 = Node("n3", "1c 0m R")
+n4 = Node("n4", "2c 3m L")
+n5 = Node("n5", "3c 0m R")
+n6 = Node("n6", "1c 3m L")
+n7 = Node("n7", "2c 2m R")
+n8 = Node("n8", "2c 2m L")
+n9 = Node("n9", "1c 3m R")
+n10 = Node("n10", "3c 0m L")
+n11 = Node("n11", "2c 3m R")
+n12 = Node("n12", "2c 0m L")
+n13 = Node("n13", "1c 1m L")
+n14 = Node("n14", "3c 3m R")
 
 n0.edges_to = [[n1], [n2], [n3]]
-n1.edges_to = [[n2], [n3], [n4]]
-n2.edges_to = [[n5]]
-n3.edges_to = [[n1], [n2], [n4], [n5]]
+n1.edges_to = [[n4]]
+n2.edges_to = [[n4]]
+n4.edges_to = [[n5]]
 n5.edges_to = [[n6]]
+n6.edges_to = [[n7]]
+n7.edges_to = [[n8]]
+n8.edges_to = [[n9]]
+n9.edges_to = [[n10]]
+n10.edges_to = [[n11]]
+n11.edges_to = [[n12], [n13]]
+n12.edges_to = [[n14]]
+n13.edges_to = [[n14]]
 
-graph1 = Graph(n0, n6, [n0, n1, n2, n3, n4, n5, n6])
+graph1 = Graph(n0, n14, [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14])
 graph1.show_graph()
 graph1.dfs_search()
-
-graph2 = Graph()
-
-graph2.addEdge(n0, n1)
-graph2.addEdge(n0, n2)
-graph2.addEdge(n0, n3)
-graph2.addEdge(n1, n2)
-graph2.addEdge(n1, n3)
-graph2.addEdge(n1, n6)
-graph2.addEdge(n2, n4)
-graph2.addEdge(n3, n1)
-graph2.addEdge(n3, n2)
-graph2.addEdge(n3, n4)
-graph2.addEdge(n3, n6)
-graph2.addEdge(n4, n5)
-graph2.addEdge(n5, n5)
-
-"""
-arquivo = open('graph1.json')
-
-n0 = Node("A")
-n1 = Node("B")
-n2 = Node("C")
-n3 = Node("D")
-n4 = Node("E")
-n5 = Node("F")
-
-graph1 = Graph(n0)
-
-n0.edges_to = [[n1, 5], [n2]]
-n1.edges_to = [[n3, 10], [n4, 25]]
-n2.edges_to = [[n5, 10]]
-n4.edges_to = [[n5, 0]]
-
-print(f"{n0}: {n0.get_edges_to(value=True, with_coust=False)}")
-
-print(f"{n0}: {n0.edges_to}")
-print(f"{n1}: {n1.edges_to}")
-print(f"{n2}: {n2.edges_to}")
-print(f"{n3}: {n3.edges_to}")
-print(f"{n4}: {n4.edges_to}")
-print(f"{n5}: {n5.edges_to}")
-print(f"{n6}: {n6.edges_to}")
-"""

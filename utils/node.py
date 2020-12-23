@@ -3,7 +3,12 @@ class Node:
 
     def __init__(self, name, value):
         """
-        :param value: Anything you want. Must be unique.
+        :param name: Name/id for the node. Must be unique
+        :param value: Anything you want.
+
+        :var edges_to type(list):  struct sample -> [[node_object, coust_to_node], [node_object, coust_to_node]]
+        The edges_to is list of list, where each list on index 0 is a node object, and index 1 is a int that represents
+        the coust to go to the node in index 0.
         """
         self.__name = name
         self.__value = value
