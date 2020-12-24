@@ -29,21 +29,21 @@ from utils.node import Node
 from utils.graph import Graph
 
 # Initial State
-n0 = Node("n0", "3c 3m L")
-n1 = Node("n1", "1c 1m R")
-n2 = Node("n2", "2c 0m R")
-n3 = Node("n3", "1c 0m R")
-n4 = Node("n4", "2c 3m L")
-n5 = Node("n5", "3c 0m R")
-n6 = Node("n6", "1c 3m L")
-n7 = Node("n7", "2c 2m R")
-n8 = Node("n8", "2c 2m L")
-n9 = Node("n9", "1c 3m R")
-n10 = Node("n10", "3c 0m L")
-n11 = Node("n11", "2c 3m R")
-n12 = Node("n12", "2c 0m L")
-n13 = Node("n13", "1c 1m L")
-n14 = Node("n14", "3c 3m R")
+n0 = Node("n0", "3c 3m L", 0)
+n1 = Node("n1", "1c 1m R", 1)
+n2 = Node("n2", "2c 0m R", 1)
+n3 = Node("n3", "1c 0m R", 1)
+n4 = Node("n4", "2c 3m L", 2)
+n5 = Node("n5", "3c 0m R", 3)
+n6 = Node("n6", "1c 3m L", 4)
+n7 = Node("n7", "2c 2m R", 5)
+n8 = Node("n8", "2c 2m L", 6)
+n9 = Node("n9", "1c 3m R", 7)
+n10 = Node("n10", "3c 0m L", 8)
+n11 = Node("n11", "2c 3m R", 9)
+n12 = Node("n12", "2c 0m L", 10)
+n13 = Node("n13", "1c 1m L", 10)
+n14 = Node("n14", "3c 3m R", 11)
 
 n0.edges_to = [[n1], [n2], [n3]]
 n1.edges_to = [[n4]]

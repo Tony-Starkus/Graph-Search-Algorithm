@@ -1,7 +1,7 @@
 
 class Node:
 
-    def __init__(self, name, value):
+    def __init__(self, name, value, deep):
         """
         :param name: Name/id for the node. Must be unique
         :param value: Anything you want.
@@ -12,6 +12,7 @@ class Node:
         """
         self.__name = name
         self.__value = value
+        self.__deep = deep
         self.__edges_to = []
 
     @property
@@ -25,6 +26,10 @@ class Node:
     @property
     def name(self):
         return self.__name
+
+    @property
+    def deep(self):
+        return self.__deep
 
     @property
     def edges_to(self):

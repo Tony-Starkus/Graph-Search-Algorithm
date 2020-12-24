@@ -1,0 +1,12 @@
+*Configurar ambiente:
+1. Utilizar Python 3.7+.
+
+*Programas:
+1. Executar arquivo main_dfs.py para busca de dfs.
+2. Executar arquivo bfs.py para busca de bsf.
+3. Executar arquivo greddy.py para busca com heuristica.
+
+*No Linux
+1. Abrir terminal no local dos arquivos.
+2. Executar o comando: $ python3.7 <nome_arquivo>
+    Ex: $ python3.7 bfs.py
