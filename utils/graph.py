@@ -50,7 +50,6 @@ class Graph:
             print("Generated nodes:", len(border))
             exit()
         elif len(node.edges_to):
-            deep += 1
             for item2 in node.get_edges_to(value=False, with_coust=False):
                 border = border + [item for item in item2.get_edges_to(value=False, with_coust=False)]
                 self.dfs(item2, visited_nodes, border, max_deep)
